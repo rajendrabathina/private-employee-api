@@ -39,6 +39,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 			
 			
 			EmployeeDTO response = new EmployeeDTO();
+			response.setId(savedEmployee.getId());
 			response.setName(savedEmployee.getName());
 			response.setEmail(savedEmployee.getEmail());
 			response.setDepartment(savedEmployee.getDepartment());
@@ -58,6 +59,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 		return employees.stream()
 	             .map(emp -> {
 	                    EmployeeDTO dto = new EmployeeDTO();
+						dto.setId(emp.getId());
 	                    dto.setName(emp.getName());
 	                    dto.setEmail(emp.getEmail());
 	                    dto.setDepartment(emp.getDepartment());
@@ -73,6 +75,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 						new ResourceNotFoundException("Employee not found with id: " + id)
 				);
 		EmployeeDTO response = new EmployeeDTO();
+		response.setId(employee.getId());
 		response.setName(employee.getName());
 		response.setEmail(employee.getEmail());
 		response.setDepartment(employee.getDepartment());
@@ -95,6 +98,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	        Employee updatedEmployee = employeeRepository.save(employee);
 
 	        EmployeeDTO response = new EmployeeDTO();
+			response.setId(updatedEmployee.getId());
 	        response.setName(updatedEmployee.getName());
 	        response.setEmail(updatedEmployee.getEmail());
 	        response.setDepartment(updatedEmployee.getDepartment());
