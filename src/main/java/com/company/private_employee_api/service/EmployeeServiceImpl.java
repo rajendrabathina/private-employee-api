@@ -98,6 +98,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	        Employee updatedEmployee = employeeRepository.save(employee);
 
 	        EmployeeDTO response = new EmployeeDTO();
+		    response.setId(updatedEmployee.getId());
 	        response.setName(updatedEmployee.getName());
 	        response.setEmail(updatedEmployee.getEmail());
 	        response.setDepartment(updatedEmployee.getDepartment());
