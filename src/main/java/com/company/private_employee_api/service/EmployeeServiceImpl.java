@@ -65,7 +65,20 @@ public class EmployeeServiceImpl implements EmployeeService {
 	             })
 	             .collect(Collectors.toList());
 	}
-	
+
+	@Override
+	public EmployeeDTO getEmployeeByID(Long id) {
+		Employee employee = employeeRepository.findById(id)
+				.orElseThrow(() ->
+						new ResourceNotFoundException("Employee not found with id: " + id)
+				);
+		EmployeeDTO response = new EmployeeDTO();
+		response.setName(employee.getName());
+		response.setEmail(employee.getEmail());
+		response.setDepartment(employee.getDepartment());
+		return response;
+	}
+
 	 @Override
 	    public EmployeeDTO updateEmployee(Long id, EmployeeDTO dto) {
 

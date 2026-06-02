@@ -31,6 +31,12 @@ public class EmployeeController {
 	public List<EmployeeDTO> getAllEmployees(){
 		return employeeService.getAllEmployees();
 	}
+
+	//getEmployeeByID
+	@GetMapping("getEmployeeByID/{id}")
+	public EmployeeDTO getEmployeeByID(@PathVariable Long id) {
+		return employeeService.getEmployeeByID(id);
+	}
 	
 	@PutMapping("/update/{id}")
     public EmployeeDTO updateEmployee(
