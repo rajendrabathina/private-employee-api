@@ -25,4 +25,7 @@ public class Employee {
     private String name;
     private String email;
     private String department;
+
+    public Employee(String name, String email, String department) {
+    }
 }
