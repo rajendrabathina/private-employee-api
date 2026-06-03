@@ -1,12 +1,16 @@
 package com.company.private_employee_api.exception;
 
+import lombok.Getter;
+
 import java.time.LocalDateTime;
 
+@Getter
 public class ErrorResponse {
 
-    private String message;
-    private int status;
-    private LocalDateTime timestamp;
+    // Getters
+    private final String message;
+    private final int status;
+    private final LocalDateTime timestamp;
 
     public ErrorResponse(String message, int status) {
         this.message = message;
@@ -15,15 +19,16 @@ public class ErrorResponse {
     }
 
     // Getters
-    public String getMessage() {
-        return message;
-    }
+//    public String getMessage() {
+//        return message;
+//    }
+//
+//    public int getStatus() {
+//        return status;
+//    }
+//
+//    public LocalDateTime getTimestamp() {
+//        return timestamp;
+//    }
 
-    public int getStatus() {
-        return status;
-    }
-
-    public LocalDateTime getTimestamp() {
-        return timestamp;
-    }
 }
